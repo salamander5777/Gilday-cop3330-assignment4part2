@@ -1,6 +1,6 @@
 # Gilday-cop3330-assignment4part2
 
-                                                        USER GUIDE FOR TO-DO LIST PROGRAM
+                                            USER GUIDE FOR TO-DO LIST PROGRAM
                                                         
 Adding to the To-Do List: In order to add a task to the table with it's corresponding due date and description, the user must input into the three fields provided at the bottom of the 'To-do List' application. Once the desired information is input, the user may then hit the 'Add Task' button, located in the bottom right corner of the application, which will then add the content to the table.
 
