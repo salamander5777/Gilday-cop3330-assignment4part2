@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.GuiController">
+     <VBox alignment="TOP_CENTER" prefHeight="161.0" prefWidth="600.0">
+         <MenuBar>
+             <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="open" mnemonicParsing="false" onAction="#menuOptions" text="Open..." />
+            <MenuItem fx:id="save" mnemonicParsing="false" onAction="#menuOptions" text="Save..." />
+            <SeparatorMenuItem mnemonicParsing="false" />
+                 <MenuItem fx:id="exit" mnemonicParsing="false" text="Exit" />
+             </Menu>
+         </MenuBar>
+         <Text text="To-Do List">
+             <font>
+                 <Font name="Arial Black" size="12.0" />
+             </font>
+         </Text>
+         <VBox alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
+             <CheckBox fx:id="checkComplete" mnemonicParsing="false" onAction="#showComplete" text="Completed Task .">
+                 <font>
+                     <Font name="System Bold" size="9.0" />
+                 </font>
+            <VBox.margin>
+               <Insets left="5.0" right="5.0" />
+            </VBox.margin>
+             </CheckBox>
+         <CheckBox fx:id="checkIncomplete" mnemonicParsing="false" onAction="#showIncomplete" text="Incomplete Task.">
+            <VBox.margin>
+               <Insets left="5.0" right="5.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Bold" size="9.0" />
+            </font>
+         </CheckBox>
+         </VBox>
+      <VBox.margin>
+         <Insets bottom="5.0" />
+      </VBox.margin>
+     </VBox>
+   <TableView fx:id="tableViewer" editable="true" fixedCellSize="100.0" prefHeight="632.0" prefWidth="600.0">
+     <columns>
+       <TableColumn fx:id="taskCol" minWidth="200.0" prefWidth="75.0" text="Task" />
+         <TableColumn fx:id="dueDateCol" minWidth="100.0" prefWidth="75.0" text="Due Date" />
+         <TableColumn fx:id="taskDescCol" minWidth="200.0" prefWidth="75.0" text="Task Description" />
+         <TableColumn fx:id="taskFinished" minWidth="100.0" prefWidth="75.0" text="Complete" />
+     </columns>
+   </TableView>
+    <HBox prefHeight="186.0" prefWidth="600.0">
+      <TextField fx:id="taskEntry" prefHeight="30.0" prefWidth="163.0" promptText="Enter task.">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <TextField fx:id="dateEntry" prefHeight="30.0" prefWidth="155.0" promptText="YYYY-MM-DD">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <TextField fx:id="taskDescription" prefHeight="30.0" prefWidth="170.0" promptText="Enter task description.">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+      </TextField>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addTask" prefHeight="30.0" prefWidth="82.0" text="Add Task" textAlignment="CENTER">
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </VBox.margin>
+          </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteTask" prefHeight="30.0" prefWidth="82.0" text="Delete Task" textAlignment="CENTER">
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </VBox.margin>
+            </Button>
+         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteList" prefHeight="25.0" prefWidth="82.0" text="Delete List" textAlignment="CENTER">
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+         </Button>
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App
+class GuiController
+
+GuiController *-- toDo
+App <|-- GuiController
+
+class GuiController {
+    +initialize()
+    +TextField taskEntry
+    +TextField dateEntry
+    +TextField taskDescription
+    +TableColumn<toDo, String> taskCol
+    +TableColumn<toDo, String> dueDateCol
+    +TableColumn<toDo, String> taskDescCol
+    +TableColumn<toDo, String> taskFinished
+    +MenuItem open
+    +MenuItem save
+    +MenuItem exit
+    +TableView<toDo> tableViewer
+    +ObservableList<toDo> data
+    +addTask()
+    +refresh()
+    +deleteTask()
+    +deleteList()
+    +showComplete()
+    +showIncomplete()
+    +menuOptions()
+    +FileChooser fileC
+    +saveFile()
+    +openFile()
+    {static} +class toDo()
+}
+
+class toDo {
+    +SimpleStringProperty taskEntry
+    +SimpleStringProperty dateEntry
+    +SimpleStringProperty descriptionEntry
+    +CheckBox verifyCheck
+    +toDo()
+    +getTask()
+    +setTask()
+    +getDate()
+    +setDate()
+    +getDescription()
+    +setDescription()
+    +getVerifyCheck()
+    +setCheck()
+}
+
+class App {
+    +start()
+    {static} +main()
+}
+@enduml
